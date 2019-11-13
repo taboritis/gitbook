@@ -1,0 +1,13 @@
+{
+    "name": "taboritis/laravel-gitbook-docs",
+    "description": "Gitbook documentation parser for Laravel projects",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Piotr",
+            "email": "pio.skro@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
