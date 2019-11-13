@@ -5,6 +5,7 @@ namespace Taboritis\LaravelGitbookDocs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Taboritis\LaravelGitbookDocs\Filters\PathFilter;
+use Taboritis\LaravelGitbookDocs\Filters\HintsFilter;
 use Taboritis\LaravelGitbookDocs\Filters\MarkdownFilter;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 
@@ -18,8 +19,7 @@ class GitbookParser
     protected $filters = [
         PathFilter::class,
         MarkdownFilter::class,
-        // it must be after MarkdownFilter
-
+        HintsFilter::class,
     ];
 
     /**
