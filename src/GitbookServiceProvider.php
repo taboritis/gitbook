@@ -14,7 +14,9 @@ class GitbookServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/resources/gitbook.php' => config_path('gitbook.php'),
+            __DIR__ . '/resources/article.blade.php' => resource_path('views/docs/article.php'),
         ], 'config');
+
 
         include __DIR__ . './resources/routes.php';
     }

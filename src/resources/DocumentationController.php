@@ -12,6 +12,6 @@ class DocumentationController extends Controller
     {
         $article = $parser->run();;
 
-        return view('article', compact('article'));
+        return view('docs.article', compact('article'));
     }
 }
