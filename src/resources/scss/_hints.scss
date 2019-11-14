@@ -1,0 +1,59 @@
+/** HINTS */
+.hint {
+    border: solid 1px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+.hint:before {
+    font-family: "FontAwesome";
+    display: inline-block;
+    font-size: xx-large;
+    padding-right: 12px;
+    vertical-align: middle;
+    font-weight: 900;
+}
+
+/** HINT INFO */
+.hint-info {
+    border-color: $info;
+    background-color: $info-light;
+}
+
+.hint-info:before {
+    content: "\f05a";
+    color: $info;
+}
+
+/* HINT SUCCESS */
+.hint-success:before {
+    content: "\f046";
+    color: $success;
+}
+
+.hint-success {
+    border-color: $success;
+    background-color: $success-light;
+}
+
+/* HINT WARNING */
+.hint-warning:before {
+    content: "\f12a";
+    color: $warning;
+}
+
+.hint-warning {
+    border-color: $warning;
+    background-color: $warning-light;
+}
+
+/* HINT DANGER */
+.hint-danger:before {
+    content: "\f071";
+    color: $danger;
+}
+
+.hint-danger {
+    border-color: $danger;
+    background-color: $danger-light;
+}
