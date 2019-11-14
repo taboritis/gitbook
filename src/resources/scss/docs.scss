@@ -1,0 +1,75 @@
+@import "~bootstrap/scss/bootstrap";
+
+@import "~font-awesome";
+
+$warning-light: lighten($warning, 30%);
+
+header {
+
+    background-color: #cbceb1;
+    padding: 10px;
+    display: flex;
+    align-self: center;
+    margin-bottom: 15px;
+}
+
+.no-decoration, .no-decoration:hover {
+    color: black;
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+
+h1 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #000040;
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 1.2rem;
+    color: #400000;
+}
+
+/** HINTS */
+.hint {
+    border: solid 1px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+.hint:before {
+    font-family: "FontAwesome";
+    display: inline-block;
+    font-size: xx-large;
+    padding-right: 12px;
+    vertical-align: middle;
+    font-weight: 900;
+}
+/** HINT INFO */
+.hint-info {
+    border-color: dodgerblue;
+    background-color: rgb(245, 245, 255);
+}
+
+.hint-info:before {
+    content: "\f05a";
+    color: dodgerblue;
+}
+
+/* HINT WARNING */
+.hint-warning:before {
+    content: "\f059";
+    color: $warning;
+}
+
+.hint-warning {
+    border-color: $warning;
+    background-color: $warning-light;
+}
