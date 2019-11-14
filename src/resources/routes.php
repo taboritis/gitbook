@@ -1,3 +1,3 @@
 <?php
 
-Route::get(config('gitbook.route'), 'Taboritis\LaravelGitbookDocs\resources\DocumentationController@article');
+Route::get((config('gitbook.route') ?? 'docs'), 'Taboritis\LaravelGitbookDocs\resources\DocumentationController@article');
