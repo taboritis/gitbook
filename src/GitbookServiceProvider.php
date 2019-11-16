@@ -16,7 +16,8 @@ class GitbookServiceProvider extends ServiceProvider
         $this->publishes([
             $this->getConfigFile() => config_path('gitbook.php'),
             $this->getArticle() => resource_path('views/docs/article.blade.php'),
-            $this->getAssets() => resource_path('/sass/docs'),
+            $this->getStyles() => resource_path('/sass/docs'),
+            $this->getScripts() => resource_path('/js/docs'),
         ], 'gitbook');
 
         include __DIR__ . '/routes.php';
@@ -37,11 +38,19 @@ class GitbookServiceProvider extends ServiceProvider
             'article.blade.php';
     }
 
-    private function getAssets()
+    private function getStyles()
     {
         return __DIR__ . DIRECTORY_SEPARATOR .
             '..' . DIRECTORY_SEPARATOR .
             'resources' . DIRECTORY_SEPARATOR .
             'sass' . DIRECTORY_SEPARATOR;
+    }
+
+    private function getScripts()
+    {
+        return __DIR__ . DIRECTORY_SEPARATOR .
+            '..' . DIRECTORY_SEPARATOR .
+            'resources' . DIRECTORY_SEPARATOR .
+            'js' . DIRECTORY_SEPARATOR;
     }
 }
