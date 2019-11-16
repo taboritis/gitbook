@@ -11,11 +11,15 @@ use Illuminate\Contracts\Filesystem\FileNotFoundException;
 
 /**
  * Class GitbookParser
- *
  * @package Taboritis\LaravelGitbookDocs
  */
 class GitbookParser
 {
+    /**
+     * @var mixed
+     */
+    public $directory;
+
     /**
      * @var array
      */
@@ -26,14 +30,19 @@ class GitbookParser
     ];
 
     /**
+     * @var \Illuminate\Config\Repository
+     */
+    private $connection;
+
+    /**
      * @var string
      */
     private $path;
 
     /**
-     * @var mixed
+     * @var string
      */
-    private $directory;
+    private $uri;
 
     /**
      * GitbookParser constructor.
@@ -42,9 +51,11 @@ class GitbookParser
      */
     public function __construct(Request $request)
     {
+        $this->uri = $request->getRequestUri();
+
         $this->path = ($request->article ?? 'SUMMARY') . '.md';
 
-        $this->directory = config('gitbook.path') ?? 'docs';
+        $this->directory = $this->getDirectory();
     }
 
     /**
@@ -63,14 +74,35 @@ class GitbookParser
     }
 
     /**
-     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response|string
+     * It returns requested file
+     * 
+     * @return string
+     * @throws \Exception
      */
     private function getFile()
     {
         try {
             return File::get("./../{$this->directory}/{$this->path}");
         } catch (FileNotFoundException $exception) {
-            return response('File not found', 404);
+            throw new  \Exception('Documentation not found');
         }
+    }
+
+    /**
+     * It return URI where documentation is stored
+     *
+     * @return string
+     */
+    private function getDirectory()
+    {
+        $config = config('gitbook');
+
+        foreach ($config['repositories'] as $connection) {
+            if ($this->uri === '/' . $connection['route']) {
+                return $this->directory = $connection['path'];
+            }
+        }
+
+        return 'docs';
     }
 }

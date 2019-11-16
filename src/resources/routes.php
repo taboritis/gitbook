@@ -1,3 +1,5 @@
 <?php
 
-Route::get((config('gitbook.route') ?? 'docs'), 'Taboritis\LaravelGitbookDocs\DocumentationController@article');
+foreach (config('gitbook.repositories') as $connection => $data) {
+    Route::get($data['route'], 'Taboritis\LaravelGitbookDocs\DocumentationController@article');
+}
