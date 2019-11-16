@@ -1,18 +1,18 @@
 <?php
 
-namespace Taboritis\LaravelGitbookDocs;
+namespace Taboritis\Gitbook;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-use Taboritis\LaravelGitbookDocs\Filters\PathFilter;
-use Taboritis\LaravelGitbookDocs\Filters\CodeFilter;
-use Taboritis\LaravelGitbookDocs\Filters\HintsFilter;
-use Taboritis\LaravelGitbookDocs\Filters\MarkdownFilter;
+use Taboritis\Gitbook\Filters\PathFilter;
+use Taboritis\Gitbook\Filters\CodeFilter;
+use Taboritis\Gitbook\Filters\HintsFilter;
+use Taboritis\Gitbook\Filters\MarkdownFilter;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 
 /**
  * Class GitbookParser
- * @package Taboritis\LaravelGitbookDocs
+ * @package Taboritis\Gitbook
  */
 class GitbookParser
 {

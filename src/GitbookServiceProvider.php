@@ -1,6 +1,6 @@
 <?php
 
-namespace Taboritis\LaravelGitbookDocs;
+namespace Taboritis\Gitbook;
 
 use Illuminate\Support\ServiceProvider;
 
