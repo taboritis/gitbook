@@ -1,5 +1,5 @@
 {
-    "name": "taboritis/laravel-gitbook-docs",
+    "name": "taboritis/gitbook",
     "description": "Gitbook documentation parser for Laravel projects",
     "license": "MIT",
     "authors": [
