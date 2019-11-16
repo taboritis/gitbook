@@ -1,14 +1,14 @@
 <?php
 
-namespace Taboritis\LaravelGitbookDocs\Filters;
+namespace Taboritis\Gitbook\Filters;
 
 use Parsedown;
 use Illuminate\Support\HtmlString;
-use Taboritis\LaravelGitbookDocs\Filters;
+use Taboritis\Gitbook\Filters;
 
 /**
  * Class MarkdownFilter
- * @package Taboritis\LaravelGitbookDocs\Filters
+ * @package Taboritis\Gitbook\Filters
  */
 class MarkdownFilter extends Filters
 {

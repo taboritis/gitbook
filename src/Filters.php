@@ -1,6 +1,6 @@
 <?php
 
-namespace Taboritis\LaravelGitbookDocs;
+namespace Taboritis\Gitbook;
 
 abstract class Filters implements GitbookFilterInterface
 {

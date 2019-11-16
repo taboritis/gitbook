@@ -1,10 +1,10 @@
 <?php
 
-namespace Taboritis\LaravelGitbookDocs;
+namespace Taboritis\Gitbook;
 
 /**
  * Interface GitbookFilterInterface
- * @package Taboritis\LaravelGitbookDocs
+ * @package Taboritis\Gitbook
  */
 interface GitbookFilterInterface
 {

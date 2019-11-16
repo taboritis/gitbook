@@ -1,8 +1,8 @@
 <?php
 
-namespace Taboritis\LaravelGitbookDocs\Filters;
+namespace Taboritis\Gitbook\Filters;
 
-use Taboritis\LaravelGitbookDocs\Filters;
+use Taboritis\Gitbook\Filters;
 
 class PathFilter extends Filters
 {

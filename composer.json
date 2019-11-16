@@ -11,13 +11,13 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "Taboritis\\LaravelGitbookDocs\\": "src/"
+            "Taboritis\\Gitbook\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Taboritis\\LaravelGitbookDocs\\GitbookServiceProvider"
+                "Taboritis\\Gitbook\\GitbookServiceProvider"
             ]
         }
     }
