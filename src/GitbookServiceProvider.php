@@ -8,16 +8,40 @@ class GitbookServiceProvider extends ServiceProvider
 {
     public function register()
     {
+        $this->loadViewsFrom(__DIR__.'./../resources/views/','laravel-gitbook-docs');
     }
 
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/resources/gitbook.php' => config_path('gitbook.php'),
-            __DIR__ . '/resources/article.blade.php' => resource_path('views/docs/article.blade.php'),
-        ], 'config');
+            $this->getConfigFile() => config_path('gitbook.php'),
+            $this->getArticle() => resource_path('views/docs/article.blade.php'),
+            $this->getAssets() => resource_path('/sass/docs'),
+        ]);
 
+        include __DIR__ . '/routes.php';
+    }
 
-        include __DIR__ . '/resources/routes.php';
+    private function getConfigFile()
+    {
+        return __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'gitbook.php';
+    }
+
+    private function getArticle()
+    {
+        return __DIR__ . DIRECTORY_SEPARATOR .
+            '..' . DIRECTORY_SEPARATOR .
+            'resources' . DIRECTORY_SEPARATOR .
+            'views' . DIRECTORY_SEPARATOR .
+            'docs' . DIRECTORY_SEPARATOR .
+            'article.blade.php';
+    }
+
+    private function getAssets()
+    {
+        return __DIR__ . DIRECTORY_SEPARATOR .
+            '..' . DIRECTORY_SEPARATOR .
+            'resources' . DIRECTORY_SEPARATOR .
+            'sass' . DIRECTORY_SEPARATOR;
     }
 }

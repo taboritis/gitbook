@@ -51,7 +51,7 @@ class GitbookParser
      */
     public function __construct(Request $request)
     {
-        $this->uri = $request->getRequestUri();
+        $this->uri = substr($request->getRequestUri(), 1);
 
         $this->path = ($request->article ?? 'SUMMARY') . '.md';
 
@@ -95,10 +95,12 @@ class GitbookParser
      */
     private function getDirectory()
     {
+        $uri = explode('?',$this->uri)[0];
+
         $config = config('gitbook');
 
         foreach ($config['repositories'] as $connection) {
-            if ($this->uri === '/' . $connection['route']) {
+            if ($uri === $connection['route']) {
                 return $this->directory = $connection['path'];
             }
         }
