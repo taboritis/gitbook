@@ -10,4 +10,10 @@ abstract class Filters implements GitbookFilterInterface
     {
         $this->file = $file;
     }
+
+    protected function replace($search, $replace)
+    {
+       $this->file = str_replace($search, $replace, $this->file);
+    }
+
 }
