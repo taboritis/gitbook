@@ -9,9 +9,6 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {
-        "laravel/ui": "^1.1"
-    },
     "autoload": {
         "psr-4": {
             "Taboritis\\LaravelGitbookDocs\\": "src/"
