@@ -9,7 +9,7 @@
 <body>
 <header>
     <div class="container">
-        <a href="{{ config('gitbook.route') ?? '/docs' }}" class="no-decoration">
+        <a href="{{ config('gitbook.default_route') }}" class="no-decoration">
             {{ config('gitbook.name') ?? 'Gitbook Documentation' }}
         </a>
     </div>
