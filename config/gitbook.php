@@ -2,7 +2,7 @@
 
 return [
 
-    'default_route' => '/docs',
+    'default_route' => '/docs', # a URi in a logo button
 
     /**
      * CONNECTIONS
@@ -13,9 +13,10 @@ return [
     'repositories' => [
 
         'docs' => [
-            'path' => 'docs',
-            'route' => 'docs',
+            'path' => 'docs',   # directory where gitbook documentation is stored
+            'route' => 'docs',  # this route will be registered in your laravel routes
         ],
+
     ],
 
 ];
