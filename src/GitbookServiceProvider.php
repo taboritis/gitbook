@@ -18,6 +18,6 @@ class GitbookServiceProvider extends ServiceProvider
         ], 'config');
 
 
-        include __DIR__ . './resources/routes.php';
+        include __DIR__ . '/resources/routes.php';
     }
 }

@@ -1,10 +1,9 @@
 <?php
 
-namespace Taboritis\LaravelGitbookDocs\resources;
+namespace Taboritis\LaravelGitbookDocs;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Taboritis\LaravelGitbookDocs\GitbookParser;
 
 class DocumentationController extends Controller
 {
