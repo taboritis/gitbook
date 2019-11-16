@@ -5,8 +5,7 @@
     <title>Documentation</title>
     <!-- Styles -->
     <link href="{{ asset('css/docs.css') }}" rel="stylesheet">
-    <script src="/path/to/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="{{ asset('js/docs.js') }}"></script>
 </head>
 <body>
 <header>
