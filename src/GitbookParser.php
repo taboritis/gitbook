@@ -16,6 +16,9 @@ use Illuminate\Contracts\Filesystem\FileNotFoundException;
  */
 class GitbookParser
 {
+    /**
+     * @var array
+     */
     protected $filters = [
         PathFilter::class,
         MarkdownFilter::class,
@@ -59,6 +62,9 @@ class GitbookParser
         return $file;
     }
 
+    /**
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response|string
+     */
     private function getFile()
     {
         try {
