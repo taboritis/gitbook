@@ -17,7 +17,7 @@ class GitbookServiceProvider extends ServiceProvider
             $this->getConfigFile() => config_path('gitbook.php'),
             $this->getArticle() => resource_path('views/docs/article.blade.php'),
             $this->getAssets() => resource_path('/sass/docs'),
-        ]);
+        ], 'gitbook');
 
         include __DIR__ . '/routes.php';
     }
