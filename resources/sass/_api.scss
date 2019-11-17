@@ -1,0 +1,13 @@
+
+.api-method-description {
+  color: $secondary;
+}
+
+.api-method-parameter {
+  border: solid 1px #f1f1f1;
+  padding: 5px 10px;
+}
+
+[data-method="get"] {
+  color: red;
+}

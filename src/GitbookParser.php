@@ -4,6 +4,7 @@ namespace Taboritis\Gitbook;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Taboritis\Gitbook\Filters\ApiFilter;
 use Taboritis\Gitbook\Filters\PathFilter;
 use Taboritis\Gitbook\Filters\CodeFilter;
 use Taboritis\Gitbook\Filters\HintsFilter;
@@ -29,6 +30,7 @@ class GitbookParser
         MarkdownFilter::class,
         HintsFilter::class,
         CodeFilter::class,
+        ApiFilter::class,
     ];
 
     /**
@@ -66,7 +68,7 @@ class GitbookParser
     public function run()
     {
         $file = $this->getFile();
-        
+
         foreach ($this->filters as $filter) {
             $filter = new $filter($file);
             $file = $filter->apply($file);
@@ -77,7 +79,6 @@ class GitbookParser
 
     /**
      * It returns requested file
-     * 
      * @return string
      * @throws \Exception
      */
@@ -92,12 +93,11 @@ class GitbookParser
 
     /**
      * It return URI where documentation is stored
-     *
      * @return string
      */
     private function getDirectory()
     {
-        $uri = explode('?',$this->uri)[0];
+        $uri = explode('?', $this->uri)[0];
 
         $config = config('gitbook');
 
